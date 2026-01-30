@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin – Gestionnaire de publicité | BeHip convertisseur-video-mpquality</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <div class="app admin-app" id="adminApp">
+    <!-- Écran de connexion -->
+    <section class="admin-login" id="adminLogin">
+      <div class="admin-login-box">
+        <h1>Administration publicité</h1>
+        <p class="admin-login-desc">BeHip convertisseur-video-mpquality – Gestion des offres marketing</p>
+        <form id="loginForm" class="admin-form">
+          <label for="adminPassword">Mot de passe admin</label>
+          <input type="password" id="adminPassword" class="search-input" placeholder="Mot de passe" autocomplete="current-password" required />
+          <button type="submit" class="btn btn-load">Accéder</button>
+        </form>
+        <p id="loginError" class="url-error" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- Tableau de bord (après connexion) -->
+    <main class="admin-dashboard" id="adminDashboard" hidden>
+      <header class="admin-header">
+        <div class="logo-wrap">
+          <a href="index.html" class="logo-link">
+            <span class="logo">BeHip convertisseur-video-mpquality</span>
+          </a>
+        </div>
+        <nav class="admin-nav">
+          <a href="index.html">← Retour convertisseur</a>
+          <button type="button" id="btnLogout" class="btn btn-cancel">Déconnexion</button>
+        </nav>
+      </header>
+
+      <section class="admin-section">
+        <h2>Offres marketing</h2>
+        <p class="admin-desc">Suivez et négociez les offres publicitaires (contacts, statut, notes).</p>
+        <form id="offerForm" class="admin-form offer-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="offerContact">Contact / Nom</label>
+              <input type="text" id="offerContact" class="search-input" placeholder="Nom ou email" required />
+            </div>
+            <div class="form-group">
+              <label for="offerCompany">Société</label>
+              <input type="text" id="offerCompany" class="search-input" placeholder="Entreprise" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="offerDescription">Offre / Description</label>
+              <input type="text" id="offerDescription" class="search-input" placeholder="Type d’offre, budget, durée…" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="offerStatus">Statut</label>
+              <select id="offerStatus" class="select">
+                <option value="nouveau">Nouveau</option>
+                <option value="en_cours">En cours</option>
+                <option value="accepte">Accepté</option>
+                <option value="refuse">Refusé</option>
+              </select>
+            </div>
+            <div class="form-group form-actions">
+              <button type="submit" class="btn btn-load">Ajouter l’offre</button>
+            </div>
+          </div>
+        </form>
+        <div class="offers-table-wrap">
+          <table class="offers-table" id="offersTable">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Contact</th>
+                <th>Société</th>
+                <th>Offre</th>
+                <th>Statut</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="offersBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="admin-section">
+        <h2>Emplacements publicitaires</h2>
+        <p class="admin-desc">Slots disponibles pour la négociation (format, statut, notes).</p>
+        <div class="slots-list" id="slotsList"></div>
+        <form id="slotForm" class="admin-form slot-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="slotName">Nom du slot</label>
+              <input type="text" id="slotName" class="search-input" placeholder="Ex. Bandeau bas 300×100" />
+            </div>
+            <div class="form-group">
+              <label for="slotSize">Dimensions</label>
+              <input type="text" id="slotSize" class="search-input" placeholder="300×100" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="slotStatus">Statut</label>
+              <select id="slotStatus" class="select">
+                <option value="disponible">Disponible</option>
+                <option value="reserve">Réservé</option>
+                <option value="actif">Actif</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="slotNotes">Notes</label>
+              <input type="text" id="slotNotes" class="search-input" placeholder="Notes négociation" />
+            </div>
+            <div class="form-group form-actions">
+              <button type="submit" class="btn btn-load">Ajouter le slot</button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <section class="admin-section">
+        <h2>Paramètres</h2>
+        <div class="admin-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="newAdminPassword">Nouveau mot de passe admin</label>
+              <input type="password" id="newAdminPassword" class="search-input" placeholder="Laisser vide pour ne pas changer" autocomplete="new-password" />
+            </div>
+            <div class="form-group form-actions">
+              <button type="button" id="btnSavePassword" class="btn btn-load">Enregistrer</button>
+            </div>
+          </div>
+        </div>
+        <p>
+          <button type="button" id="btnExport" class="btn btn-cancel">Exporter les données (JSON)</button>
+        </p>
+      </section>
+
+      <footer class="footer">
+        <p><a href="index.html">BeHip convertisseur-video-mpquality</a> – Admin publicité</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+/* ============================================
+   Admin – Gestionnaire de publicité
+   BeHip convertisseur-video-mpquality
+   ============================================ */
+
+.admin-app {
+  max-width: 900px;
+}
+
+/* Connexion */
+.admin-login {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.admin-login-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: var(--shadow);
+}
+
+.admin-login-box h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.admin-login-desc {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.admin-login .admin-form label {
+  display: block;
+  font-size: 0.875rem;
+  margin-bottom: 0.35rem;
+  color: var(--text-muted);
+}
+
+.admin-login .search-input {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.admin-login .btn {
+  width: 100%;
+}
+
+/* Dashboard */
+.admin-dashboard {
+  padding-bottom: 2rem;
+}
+
+.admin-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.admin-header .logo-wrap {
+  margin-bottom: 0;
+}
+
+.logo-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.logo-link:hover {
+  text-decoration: underline;
+}
+
+.admin-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-nav a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.admin-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Sections */
+.admin-section {
+  margin-bottom: 2.5rem;
+}
+
+.admin-section h2 {
+  font-size: 1.25rem;
+  margin: 0 0 0.35rem 0;
+}
+
+.admin-desc {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0 0 1rem 0;
+}
+
+/* Formulaires */
+.admin-form .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.admin-form .form-group {
+  flex: 1;
+  min-width: 140px;
+}
+
+.admin-form .form-group label {
+  display: block;
+  font-size: 0.875rem;
+  margin-bottom: 0.35rem;
+  color: var(--text-muted);
+}
+
+.admin-form .form-actions {
+  display: flex;
+  align-items: flex-end;
+}
+
+.offer-form .form-row:last-of-type,
+.slot-form .form-row:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Table offres */
+.offers-table-wrap {
+  overflow-x: auto;
+  margin-top: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+}
+
+.offers-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.offers-table th,
+.offers-table td {
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.offers-table th {
+  background: var(--bg-input);
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.offers-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.offers-table .status-badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status-badge.nouveau { background: #3b82f6; color: #fff; }
+.status-badge.en_cours { background: #eab308; color: #000; }
+.status-badge.accepte { background: var(--accent); color: #fff; }
+.status-badge.refuse { background: var(--danger); color: #fff; }
+
+.offers-table .btn-delete {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.25rem;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.offers-table .btn-delete:hover {
+  color: var(--danger);
+}
+
+.offers-table .text-muted {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 1rem;
+}
+
+/* Slots */
+.slots-list {
+  margin-bottom: 1rem;
+}
+
+.slot-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.slot-card .slot-info {
+  flex: 1;
+  min-width: 150px;
+}
+
+.slot-card .slot-name {
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+}
+
+.slot-card .slot-meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.slot-card .btn-delete-slot {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.slot-card .btn-delete-slot:hover {
+  color: var(--danger);
+}
+
+@media (max-width: 640px) {
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .offers-table th,
+  .offers-table td {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+}
